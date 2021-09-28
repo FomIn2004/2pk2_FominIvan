@@ -46,6 +46,7 @@ namespace pz_5
             }
 
             // Задание 4
+            Console.WriteLine("Задание 4");
             for (int i = 0; i != 100; i++) // цикл до 100
             {
                 var number = i % 18; // если кратно 18 
@@ -56,12 +57,20 @@ namespace pz_5
 
             }
             // Задание 5
+            Console.WriteLine("Задание 5");
+             int j1 = 35; //  объявление переменной, и присвоение ей значения 35
+            for (int i = 0; i < j1 + 3; i++) // разница - 3
+             {
+            Console.WriteLine(i + " " + j1); // вывод
+             j1--;
+            }
+           
 
 
 
 
 
-            
+
 
         }
     }
