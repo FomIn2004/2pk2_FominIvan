@@ -13,6 +13,9 @@ namespace pz_5
                 Console.WriteLine(k);
             }
             Console.ReadLine();
+
+
+            // Задание 2
         }
     }
 }
