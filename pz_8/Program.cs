@@ -12,12 +12,12 @@ namespace pz_8
         {
             int i;
             int max;//переменная для нахождения макс.значения
-            int[] A = new int[10];// создание массива на 10 элементов
+            char[] A = new char[10];// создание массива на 10 элементов
 
             Console.WriteLine("Введите посимвольно 10 элементов: ");
             for (i = 0; i <= 9; i++)
             {
-                A[i] = int.Parse(Console.ReadLine()); // ввод значений с клавиатуры
+                A[i] = char.Parse(Console.ReadLine()); // ввод значений с клавиатуры
 
             }
             Console.WriteLine("Вывод массива в порядке возрастания:");
