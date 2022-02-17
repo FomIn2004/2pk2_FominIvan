@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pz_9", "pz_9\pz_9.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pz_10", "pz_10\pz_10.csproj", "{2C46136B-6B06-458F-ACE9-E62F72720F94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_31", "pz_31\pz_31.csproj", "{DBD6CB28-AF8A-4BC2-A02B-857A549B034B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "praktika_3", "pz_31\praktika_3.csproj", "{DBD6CB28-AF8A-4BC2-A02B-857A549B034B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
