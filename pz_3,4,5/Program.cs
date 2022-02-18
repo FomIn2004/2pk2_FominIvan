@@ -2,8 +2,8 @@
 
 namespace pz_3_4_5
 
-
 {
+
     enum StatesOfCorrectInput
     {
         EMPTY = -1,
@@ -12,6 +12,8 @@ namespace pz_3_4_5
         ERROR_DAY,
         ERROR_YEAR
     }
+
+
     class Program
     {
         static void Main(string[] args)
@@ -20,35 +22,42 @@ namespace pz_3_4_5
             Patient pats = new Patient("12.13.2435", "13.02.1956");
             Patient patss = new Patient("12.05.2456", "13.02.1956");
             Patient patsss = new Patient("59.02.34", "13.02.1956");
-            Patient test = new Patient("12.12.2003", "17.02.2022");
+            Patient tst = new Patient("12.12.2003", "17.02.2022");
             Patient ooo = new Patient("12.12.2000", "13.02.1956");
             Patient oooo = new Patient("12.12.2010", "13.02.1956");
+            Test1 sts = new Test1("12.12.2010", "13.02.1956");
 
             pat2.GetPatientInfo();
             pats.GetPatientInfo();
             patss.GetPatientInfo();
             patsss.GetPatientInfo();
-            test.GetPatientInfo();
+            tst.GetPatientInfo();
 
             ooo.GetPatientInfo();
             oooo.GetPatientInfo();
             pat2.GetCountPatients();
+            sts.GetPatientInfo();
         }
     }
-
-
 
     class Patient
     {
         string full_name;
         DateTime dataBirth;
         DateTime receiptDate;
-        string diagnos;
+        private string diagnos;
+        public string Diagnos
+        {
+            get { return diagnos; }
+            set { diagnos = value; }
+        }
         static int count_patients = 0;
         static int count_Non_FullYear_Old = 0;
         bool isCorrectInputData = true;
 
         static public int[] daysInMonth = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+
 
         //date format - dd.mm.yyyy
         public Patient(string dateOfBirth, string dateOfReceipt, string diagnos = "неизвестно", string name = "неизвестно")
@@ -70,7 +79,7 @@ namespace pz_3_4_5
             this.diagnos = diagnos;
 
             if (checkDate(dateOfBirth, ref dataBirth) != (int)StatesOfCorrectInput.RIGHT ||
-               checkDate(dateOfReceipt, ref receiptDate) != (int)StatesOfCorrectInput.RIGHT)
+            checkDate(dateOfReceipt, ref receiptDate) != (int)StatesOfCorrectInput.RIGHT)
             {
                 Console.WriteLine("Ошибка ввода в дате");
                 isCorrectInputData = false;
@@ -122,6 +131,7 @@ namespace pz_3_4_5
                     }
                     else
                         return (int)StatesOfCorrectInput.ERROR_YEAR;
+
                 }
                 else
                     return (int)StatesOfCorrectInput.ERROR_DAY;
@@ -129,9 +139,8 @@ namespace pz_3_4_5
             else
                 return (int)StatesOfCorrectInput.ERROR_MONTH;
 
-
         }
-        public void GetPatientInfo()
+        public virtual void GetPatientInfo()
         {
             if (isCorrectInputData)
                 Console.WriteLine($"ФИО: {full_name}\nДата рождения: {dataBirth}\nДата поступления: {receiptDate}\nДиагноз: {diagnos}\n");
@@ -143,4 +152,21 @@ namespace pz_3_4_5
             Console.WriteLine($"Число больных: {count_patients}\n Число несовершенно-летних больных: {count_Non_FullYear_Old} ");
         }
     }
+
+    class Test1 : Patient
+    {
+
+        public int test { get; set; }
+        public Test1(string s, string ss, string sss = "выздоровел", string ssss = "неизвестно") : base(s, ss, sss, ssss)
+        {
+
+        }
+        public override void GetPatientInfo()
+        {
+            Console.WriteLine($"Статус диагноза {Diagnos} ");
+        }
+
+    }
+
+
 }
